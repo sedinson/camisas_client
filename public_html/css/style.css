@@ -1,0 +1,184 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6/07/2014, 08:51:14 PM
+    Author     : edinson
+*/
+body {
+  font-family: sans-serif;
+}
+core-header-panel {
+  background: white;
+}
+core-toolbar {
+  background-color: #03A9F4;
+}
+
+.content {
+  padding: 20px;
+}
+/* drawer is always visible on a wide screen
+   so menu button isn't required */
+core-drawer-panel#leftPanel:not([narrow]) #navicon {
+  display: none;
+}
+
+#fuck::shadow #mainPanel #dropShadow {
+  display: none;
+}
+
+core-drawer-panel#rightPanel:not([narrow]) #morebutton {
+  display: none;
+}
+
+#leonardo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#michelangelo {
+    position: relative;
+    margin: 20px auto;
+}
+
+#raphael {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: #636363 1px dashed;
+}
+
+.core-overlay-backdrop {
+    background: rgba(0,0,0,0.8);
+}
+
+.x-dialog {
+    background: #fff;
+    overflow: auto;
+}
+
+.x-dialog-title {
+    margin: 0;
+    background: #03A9F4;
+    padding: 5px 10px;
+}
+
+.x-dialog-guide {
+    color: #636363;
+    font-size: 11px;
+    margin: 5px 10px;
+}
+
+#step {
+    width: 320px;
+    height: 250px;
+    overflow: auto;
+    margin: 10px;
+    position: relative;
+}
+
+.step {
+    overflow: auto;
+}
+
+#step core-icon-button {
+    width: 80px;
+    height: 80px;
+}
+
+paper-input, paper-slider, core-dropdown, select {
+    width: 100%;
+}
+
+.respy {
+    width: 96%;
+    margin: auto 2%;
+}
+
+.inBox {
+    padding: 5px;
+    margin: 5px 0;
+    background: #eaeaea;
+    overflow: auto;
+}
+
+.inBox p {
+    margin: 2px auto;
+}
+
+#step core-icon-button::shadow core-icon {
+    width: 67px!important;
+    height: 66px!important;
+    background-size: 55px 55px!important;
+}
+
+#design {
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+#design p input[type=text] {
+    border: none;
+    width: 100%;
+}
+
+#design p.half {
+    position: relative;
+    float: left;
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+select {
+    appearance: button;
+    background: #fff;
+    padding: 5px;
+    border: #636363 1px solid;
+}
+
+#layers {
+    margin: 0;
+    padding: 10px;
+}
+#layers li {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    overflow: auto;
+    cursor: pointer;
+}
+#layers li.selected {
+    background: #03A9F4;
+}
+#layers li:hover {
+    background: #6acbf7;
+}
+#layers li.selected h2 {
+    color: #fff;
+}
+#layers li img, #layers li h2, #layers li button {
+    position: relative;
+    float: left;
+}
+#layers li h2 {
+    font-size: 14px;
+    margin: 0 5px;
+}
+#layers li button {
+    float: right;
+    margin: 0;
+    border: none;
+}
+#layers li button.delete {
+    color: white;
+    background: #f00;
+}

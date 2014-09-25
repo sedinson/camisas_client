@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Camisas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/app.css" />
+        
+        <script src="components/platform/platform.js"></script>
+        <link rel="import" href="components/core-toolbar/core-toolbar.html">
+        <link rel="import" href="components/core-menu/core-menu.html">
+        <link rel="import" href="components/core-item/core-item.html">
+        <link rel="import" href="components/core-header-panel/core-header-panel.html">
+        <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
+        <link rel="import" href="components/core-icons/core-icons.html">
+        <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+        <link rel="import" href="components/core-overlay/core-overlay.html">
+        <link rel="import" href="components/core-pages/core-pages.html">
+        <link rel="import" href="components/core-icon-button/core-icon-button.html">
+        <link rel="import" href="components/paper-shadow/paper-shadow.html">
+        <link rel="import" href="components/paper-button/paper-button.html">
+        <link rel="import" href="components/paper-input/paper-input.html">
+        <link rel="import" href="components/paper-slider/paper-slider.html">
+        <link rel="import" href="components/core-dropdown/core-dropdown.html">
+    </head>
+    
+    <body unresolved>
+        <core-drawer-panel id="leftPanel" responsiveWidth="1100px" disableSwipe drawerWidth="200px">
+
+            <core-header-panel drawer>
+                <core-toolbar id="navheader1">
+                    <span></span>
+                </core-toolbar>
+                
+                <div class="inBox">
+                    <paper-button id="btn-text" icon="create" label="texto"></paper-button>
+                    <paper-button id="btn-shape" icon="star" label="figura"></paper-button>
+                    <paper-button icon="visibility" label="prediseñada"></paper-button>
+                    <paper-button icon="cloud-upload" label="subir imagen"></paper-button>
+                </div>
+                
+                <div class="inBox">
+                    <p>Capas</p>
+                    <ul id="layers"></ul>
+                </div>
+            </core-header-panel>
+
+            <core-header-panel main id="fuck">
+                <core-drawer-panel id="rightPanel" rightDrawer disableSwipe responsiveWidth="1100px" drawerWidth="250px">
+                    <core-header-panel drawer>
+                        <core-toolbar id="navheader2">
+                            <span></span>
+                        </core-toolbar>
+                        
+                        <!--Miniaturas de las Perspectivas-->
+                        <div class="inBox">
+                            <div id="perspectivas"></div>
+                        </div>
+                        
+                        <!--Diseño-->
+                        <core-pages id="design">
+                            
+                            <!--EDICION DE TEXTO-->
+                            <div class="design" id="design-text">
+                                <div class="inBox">
+                                    <p>
+                                        <paper-input class="respy" name="text" multiline maxRows="3" label="Escribe una frase"></paper-input>
+                                    </p>
+                                </div>
+                                
+                                <div class="inBox">
+                                    <p>
+                                        <label>Fuente:</label>
+                                        <select name="font-family" class="respy">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Calibri">Calibri</option>
+                                            <option value="sans-serif">Sans Serif</option>
+                                        </select>
+                                    </p>
+                                    
+                                    <p class="half">
+                                        <label>Tamaño:</label>
+                                        <paper-slider name="font-size" min="10" max="100" value="50" pin></paper-slider>
+                                    </p>
+                                    
+                                    <p class="half">
+                                        <label>Estilo:</label>
+                                        <select name="font-weight">
+                                            <option>lighter</option>
+                                            <option>normal</option>
+                                            <option>bold</option>
+                                        </select>
+                                    </p>
+                                </div>
+                                
+                                <div class="inBox">
+                                    <p class="half">
+                                        <label>Relleno:</label>
+                                        <input name="fill" type="text" class="color" />
+                                    </p>
+
+                                    <p class="half">
+                                        <label>Linea:</label>
+                                        <input name="stroke" type="text" class="color" />
+                                    </p>
+                                    
+                                    <p>
+                                        <label>Grosor:</label>
+                                        <paper-slider name="stroke-width" min="0" max="20" value="1" pin></paper-slider>
+                                    </p>
+                                </div>
+                                
+                                <div class="inBox">
+                                    <p>
+                                        <label>Rotación:</label>
+                                        <paper-slider name="rotate" min="-180" max="180" value="0" pin></paper-slider>
+                                    </p>
+
+                                    <p class="half">
+                                        <label>x:</label>
+                                        <paper-slider name="x" min="0" max="100" value="0" pin></paper-slider>
+                                    </p>
+
+                                    <p class="half">
+                                        <label>y:</label>
+                                        <paper-slider name="y" min="0" max="100" value="0" pin></paper-slider>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!--EDICION DE FIGURAS-->
+                            <div class="design" id="design-shape">
+                                <div class="inBox">
+                                    <p class="half">
+                                        <label>Relleno:</label>
+                                        <input name="fill" type="text" class="color" />
+                                    </p>
+
+                                    <p class="half">
+                                        <label>Linea:</label>
+                                        <input name="stroke" type="text" class="color" />
+                                    </p>
+                                    
+                                    <p>
+                                        <label>Grosor:</label>
+                                        <paper-slider name="stroke-width" min="0" max="20" value="1" pin></paper-slider>
+                                    </p>
+                                </div>
+                                
+                                <div class="inBox">
+                                    <p>
+                                        <label>Rotación:</label>
+                                        <paper-slider name="rotate" min="-180" max="180" value="0" pin></paper-slider>
+                                    </p>
+                                    
+                                    <p>
+                                        <label>Redondez:</label>
+                                        <paper-slider name="r" min="0" max="100" value="0" pin></paper-slider>
+                                    </p>
+                                </div>
+                                
+                                <div class="inBox">
+                                    <p class="half">
+                                        <label>x:</label>
+                                        <paper-slider name="x" min="0" max="100" value="0" pin></paper-slider>
+                                    </p>
+
+                                    <p class="half">
+                                        <label>y:</label>
+                                        <paper-slider name="y" min="0" max="100" value="0" pin></paper-slider>
+                                    </p>
+                                    
+                                    <p class="half">
+                                        <label>Ancho:</label>
+                                        <paper-slider name="width" min="0" max="200" value="0" pin></paper-slider>
+                                    </p>
+
+                                    <p class="half">
+                                        <label>Alto:</label>
+                                        <paper-slider name="height" min="0" max="200" value="0" pin></paper-slider>
+                                    </p>
+                                </div>
+                            </div>
+                        </core-pages>
+                    </core-header-panel>
+                    
+                    <core-header-panel main>
+                        <core-toolbar id="mainheader">
+                            <paper-icon-button id="navicon" icon="menu"></paper-icon-button>
+                            <span flex>Title</span>
+                            <paper-icon-button id="morebutton" icon="more-vert"></paper-icon-button>
+                        </core-toolbar>
+                        
+                        <!--Michelangelo, Raphael, Donatello, Leonardo-->
+                        <div id="leonardo">
+                            <div id="michelangelo">
+                                <img id="donatello" />
+                                <div id="raphael"></div>
+                            </div>
+                        </div>
+                    </core-header-panel>
+                </core-drawer-panel>
+            </core-header-panel>
+        </core-drawer-panel>
+    
+        <!--Contenedor de carga inicial-->
+        <core-overlay opened autoCloseDisabled backdrop id="loadPage">
+            <div class="x-dialog">
+                <paper-shadow z="1"></paper-shadow>
+                
+                <h2 class="x-dialog-title">
+                    <paper-shadow z="1"></paper-shadow>
+                    Bienvenido!
+                </h2>
+                <p class="x-dialog-guide" id="prendas-guide">Prendas </p>
+                <core-pages id="step">
+                    <div class="step" id="step1"></div>
+                    <div class="step" id="step2"></div>
+                </core-pages>
+            </div>
+        </core-overlay>
+        
+        <script src="js/jquery.js"></script>
+        <script src="js/projectbase.js"></script>
+        <script src="js/raphael-min.js"></script>
+        <script src="js/prenda.js"></script>
+        <script src="js/jscolor/jscolor.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
